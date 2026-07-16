@@ -1,0 +1,209 @@
+/* brutalist dark theme config */
+:root {
+    --bg-dark: #0a0a0c;
+    --panel-bg: #111115;
+    --border-color: #2c2c35;
+    --text-main: #e4e4e7;
+    --text-muted: #71717a;
+    --accent: #3b82f6; /* cyber blue */
+    --accent-hover: #2563eb;
+    --font-mono: 'Courier New', Courier, monospace;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.5;
+    padding-bottom: 50px;
+  }
+  
+  /* top system header */
+  .system-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: var(--panel-bg);
+    border-bottom: 2px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .logo {
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  
+  .status {
+    color: #10b981; /* terminal green */
+    font-size: 11px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+  
+  /* brutalist composer form */
+  .composer {
+    background-color: var(--panel-bg);
+    border: 2px solid var(--border-color);
+    margin-bottom: 40px;
+  }
+  
+  .form-header {
+    background-color: var(--border-color);
+    padding: 8px 15px;
+    font-weight: bold;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .form-grid input {
+    background: transparent;
+    border: none;
+    padding: 12px 15px;
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    outline: none;
+  }
+  
+  .form-grid input:first-child {
+    border-right: 1px solid var(--border-color);
+  }
+  
+  textarea {
+    width: 100%;
+    height: 120px;
+    background: transparent;
+    border: none;
+    padding: 15px;
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    resize: vertical;
+    outline: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #0d0d11;
+  }
+  
+  /* custom buttons */
+  .btn {
+    font-family: var(--font-mono);
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 2px solid var(--border-color);
+    background: transparent;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  
+  .btn-primary {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--border-color);
+  }
+  
+  .file-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .file-name {
+    font-size: 11px;
+    color: var(--text-muted);
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* posts stream styling */
+  .feed {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .post-card {
+    background-color: var(--panel-bg);
+    border: 2px solid var(--border-color);
+  }
+  
+  .post-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #0d0d11;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  
+  .post-alias {
+    color: var(--accent);
+    font-weight: bold;
+  }
+  
+  .post-topic {
+    color: var(--text-main);
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  .post-body {
+    padding: 15px;
+    word-break: break-word;
+  }
+  
+  /* image block */
+  .post-media-container {
+    padding: 0 15px 15px 15px;
+  }
+  
+  .post-media {
+    max-width: 100%;
+    max-height: 400px;
+    border: 1px solid var(--border-color);
+    display: block;
+  }
+  
+  .system-message {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+    border: 2px dashed var(--border-color);
+  }
