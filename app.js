@@ -1,7 +1,9 @@
+// config keys
 const BIN_ID = "6a59401ada38895dfe67f601";
-const MASTER_KEY = "$2a$10$wS6gOXuHEuQzT2QF8EVLz.HIgCC.EzZaLOW36owzprYOUZT2o1ApS"; // your jsonbin master key
+const MASTER_KEY = "$2a$10$wS6gOXuHEuQzT2QF8EVLz.HIgCC.EzZaLOW36owzprYOUZT2o1ApS";
 const IMGBB_API_KEY = "69adcfcc526fef2a3f2ff8dc5f1fde67";
 
+// direct connection to jsonbin to avoid proxy blocks
 const BIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}?meta=false`;
 
 // DOM References
@@ -32,7 +34,7 @@ function fileToBase64(file) {
   });
 }
 
-// 1. fetch stream directly
+// 1. fetch stream directly from jsonbin
 async function getStream() {
   const response = await fetch(BIN_URL, {
     method: 'GET',
@@ -45,7 +47,7 @@ async function getStream() {
   return Array.isArray(data) ? data : (data.record || []);
 }
 
-// 2. update stream directly
+// 2. update jsonbin stream directly
 async function updateStream(newStream) {
   const response = await fetch(BIN_URL, {
     method: 'PUT',
