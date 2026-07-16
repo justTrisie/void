@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>void // anonymous platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- header bar -->
+  <header class="system-bar">
+    <div class="logo">VOID // PUBLIC_STREAM</div>
+    <div class="status">STATUS: ONLINE // SERVERLESS</div>
+  </header>
+
+  <!-- main composition container -->
+  <main class="container">
+    
+    <!-- new post form -->
+    <section class="composer">
+      <form id="post-form">
+        <div class="form-header">NEW_TRANSMISSION</div>
+        <div class="form-grid">
+          <input type="text" id="post-alias" placeholder="ALIAS (DEFAULT: ANONYMOUS)" autocomplete="off">
+          <input type="text" id="post-topic" placeholder="TOPIC/SUBJECT (OPTIONAL)" autocomplete="off">
+        </div>
+        <textarea id="post-body" placeholder="write your thoughts into the void..." required></textarea>
+        
+        <div class="form-footer">
+          <div class="file-input-wrapper">
+            <button type="button" class="btn btn-secondary" id="file-trigger">ATTACH_MEDIA</button>
+            <input type="file" id="post-file" accept="image/*,video/webm" style="display: none;">
+            <span id="file-name" class="file-name">NO_FILE_ATTACHED</span>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submit-btn">SEND_TO_VOID</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- feed stream -->
+    <section id="feed" class="feed">
+      <!-- posts injected here dynamically -->
+      <div class="system-message">INITIALISING FEED STREAM...</div>
+    </section>
+
+  </main>
+
+  <!-- load firebase & app logic -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
