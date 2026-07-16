@@ -2,8 +2,7 @@ const BIN_ID = "6a59401ada38895dfe67f601";
 const MASTER_KEY = "$2a$10$wS6gOXuHEuQzT2QF8EVLz.HIgCC.EzZaLOW36owzprYOUZT2o1ApS"; // your jsonbin master key
 const IMGBB_API_KEY = "69adcfcc526fef2a3f2ff8dc5f1fde67";
 
-const RAW_BIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}?meta=false`;
-const PROXIED_URL = 'https://corsproxy.io/?' + encodeURIComponent(RAW_BIN_URL);
+const BIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}?meta=false`;
 
 // DOM References
 const postForm = document.getElementById('post-form');
@@ -33,9 +32,9 @@ function fileToBase64(file) {
   });
 }
 
-// 1. fetch stream from jsonbin (proxied to avoid cors)
+// 1. fetch stream directly
 async function getStream() {
-  const response = await fetch(PROXIED_URL, {
+  const response = await fetch(BIN_URL, {
     method: 'GET',
     headers: {
       'X-Master-Key': MASTER_KEY
@@ -46,9 +45,9 @@ async function getStream() {
   return Array.isArray(data) ? data : (data.record || []);
 }
 
-// 2. update jsonbin stream with new array (proxied to avoid cors)
+// 2. update stream directly
 async function updateStream(newStream) {
-  const response = await fetch(PROXIED_URL, {
+  const response = await fetch(BIN_URL, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
