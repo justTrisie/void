@@ -1,7 +1,6 @@
-// config keys
 const BIN_ID = "6a59401ada38895dfe67f601";
-const MASTER_KEY = "PLACEHOLDER_JSONBIN_KEY";
-const IMGBB_API_KEY = "PLACEHOLDER_IMGBB_KEY";
+const MASTER_KEY = "$2a$10$wS6gOXuHEuQzT2QF8EVLz.HIgCC.EzZaLOW36owzprYOUZT2o1ApS"; // your jsonbin master key
+const IMGBB_API_KEY = "69adcfcc526fef2a3f2ff8dc5f1fde67";
 
 const RAW_BIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}?meta=false`;
 const PROXIED_URL = 'https://corsproxy.io/?' + encodeURIComponent(RAW_BIN_URL);
